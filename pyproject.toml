@@ -1,0 +1,30 @@
+[project]
+name = "graphify-swift-edges"
+version = "0.1.0"
+description = "Recover qualified Swift call edges (Type.method / Type.shared.method) that Graphify's AST pass drops, reconnecting cross-service call pathways in the knowledge graph."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "graphify-swift-edges contributors" }]
+keywords = ["graphify", "knowledge-graph", "swift", "tree-sitter", "call-graph", "static-analysis"]
+dependencies = [
+    "tree-sitter>=0.23.0",
+    "tree-sitter-swift>=0.7.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+graphify-swift-edges = "graphify_swift_edges.recover:_main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/graphify_swift_edges"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
