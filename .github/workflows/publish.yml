@@ -7,6 +7,11 @@ on:
     types: [published]
   workflow_dispatch:
 
+# Opt JS actions (checkout, setup-python) into the Node 24 runtime ahead of the
+# Node 20 deprecation (forced 2026-06-16, removed 2026-09-16).
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+
 jobs:
   build-and-publish:
     runs-on: ubuntu-latest
