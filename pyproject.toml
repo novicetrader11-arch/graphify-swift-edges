@@ -5,7 +5,7 @@ description = "Recover qualified Swift call edges (Type.method / Type.shared.met
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }
-authors = [{ name = "graphify-swift-edges contributors" }]
+authors = [{ name = "novicetrader11-arch" }]
 keywords = ["graphify", "knowledge-graph", "swift", "tree-sitter", "call-graph", "static-analysis"]
 dependencies = [
     "tree-sitter>=0.23.0",
@@ -17,6 +17,11 @@ dev = ["pytest>=8.0"]
 
 [project.scripts]
 graphify-swift-edges = "graphify_swift_edges.recover:_main"
+
+[project.urls]
+Homepage = "https://github.com/novicetrader11-arch/graphify-swift-edges"
+Repository = "https://github.com/novicetrader11-arch/graphify-swift-edges"
+Issues = "https://github.com/novicetrader11-arch/graphify-swift-edges/issues"
 
 [build-system]
 requires = ["hatchling"]
